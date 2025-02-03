@@ -20,4 +20,5 @@ import Component from '@/components/insert_component/Component.vue';
 </template>
 <style scoped>
     
+    
 </style>
