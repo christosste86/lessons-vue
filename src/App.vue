@@ -11,7 +11,7 @@ export default{
   <header>
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/insertComponent">About</RouterLink>
+        <RouterLink to="/insertComponent">Insert component</RouterLink>
       </nav>
   </header>
   <main>

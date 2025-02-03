@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import InsertComponent from '../components/insert_component/component.vue'
+import InsertComponent from  '@/components/insert_component/component.vue'
 import Introdaction from '@/components/introdaction.vue'
 
 const router = createRouter({
