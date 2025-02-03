@@ -13,6 +13,10 @@ export default{
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/insertComponent">Insert component</RouterLink>
         <RouterLink to="/dataBinding">Data binding</RouterLink>
+        <RouterLink to="/eventHandling">Event component</RouterLink>
+        <RouterLink to="/conditionRendering">Contitional rendering</RouterLink>
+        <RouterLink to="/props">Props</RouterLink>
+        <RouterLink to="/emits">Emits</RouterLink>
       </nav>
   </header>
   <main>

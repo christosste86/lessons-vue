@@ -20,7 +20,6 @@
 </script>
 
 <template>
-	<HelloWorld />
 	<p> {{ greeting }} {{ name }}</p>
 	<p v-text="question"></p>
 	<p v-html="htmlData" v-bind:id="new" :class="id" :style="style" ></p>
