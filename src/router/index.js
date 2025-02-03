@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import InsertComponent from  '@/components/insert_component/component.vue'
-import Introdaction from '@/components/introdaction.vue'
+import Introdaction from '@/components/Introdaction.vue'
+import DataBinding from '@/components/dataBinding/Component.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/insertComponent',
       name: 'insertComponent',
       component: InsertComponent,
+    },
+    {
+      path: '/dataBinding',
+      name: 'dataBinding',
+      component: DataBinding,
     },
   ],
 })
