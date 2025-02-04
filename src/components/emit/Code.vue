@@ -1,6 +1,6 @@
 <script>
 import Component from './example/Component.vue';
-import ChildComponent from './example/ChildComponent.vue';
+import ChildComponent from './example/ChildComponet.vue';
 import component_code_image from '@/assets/images/emit/emit_component_image.png';
 import child_component_code_image from '@/assets/images/emit/emit_child_component_image.png';
 
