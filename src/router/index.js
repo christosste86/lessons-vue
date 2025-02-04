@@ -6,6 +6,7 @@ import Eventhandling from '@/components/event_handling/Code.vue'
 import CoditionalRendering from '@/components/conditional_rendering/Code.vue'
 import Props from '@/components/props/Code.vue'
 import Emits from '@/components/emit/Code.vue'
+import Slots from '@/components/slots/Description.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +45,13 @@ const router = createRouter({
       path:'/emits',
       name: 'emits',
       component: Emits,
-    }
+    },
+    {
+      path:'/slots',
+      name: 'slots',
+      component: Slots,
+    },
+
   ],
   
 })

@@ -21,6 +21,7 @@ export default{
           <li><RouterLink to="/conditionRendering">Contitional rendering</RouterLink></li>
           <li><RouterLink to="/props">Props</RouterLink></li>
           <li><RouterLink to="/emits">Emits</RouterLink></li>
+          <li><RouterLink to="/slots">Slots</RouterLink></li>
         </ul>
     </nav>
 
