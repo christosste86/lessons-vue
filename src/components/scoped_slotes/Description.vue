@@ -1,8 +1,8 @@
 <script>
 import Component from './example/Component.vue';
 import ChildComponent from './example/ChildComponent.vue';
-import component_code_image from '@/assets/images/slots/slots_component_image.png';
-import child_component_code_image from '@/assets/images/slots/slots_child_component_image.png';
+import component_code_image from '@/assets/images/scoped_slots/scoped_slots_component_image.png';
+import child_component_code_image from '@/assets/images/scoped_slots/scoped_slots_child_component_image.png';
 
     export default {
         name: 'Desciption',
@@ -21,8 +21,8 @@ import child_component_code_image from '@/assets/images/slots/slots_child_compon
 </script>
 <template>
     <div class="description">
-        <p>They are like placeholders where a parent component can inject content into a child component. 
-            Think of them as blank spaces or containers that the parent can fill with specific content.</p>
+        <p>Scoped slots in Vue.js are like personalized slots within a component. 
+            They enable a parent component to provide not only content but also data to a child component, allowing the child to use that data in rendering the provided content.</p>
     </div>
     <div class="code">
         <div class="code-container">

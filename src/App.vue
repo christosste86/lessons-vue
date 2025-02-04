@@ -22,6 +22,7 @@ export default{
           <li><RouterLink to="/props">Props</RouterLink></li>
           <li><RouterLink to="/emits">Emits</RouterLink></li>
           <li><RouterLink to="/slots">Slots</RouterLink></li>
+          <li><RouterLink to="/scopedSlots">Scoped slots</RouterLink></li>
         </ul>
     </nav>
 
