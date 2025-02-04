@@ -46,6 +46,7 @@ const router = createRouter({
       component: Emits,
     }
   ],
+  
 })
 
 export default router
