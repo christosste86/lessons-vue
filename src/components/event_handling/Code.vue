@@ -1,13 +1,11 @@
 <script>
 import Component from './Component.vue';
-import ChildComponent from './ChildComponent.vue';
 import component_code_image from '@/assets/images/event_handling/event_handling_component_image.png';
 
     export default {
         name: 'Code',
         components: {
             Component,
-            ChildComponent,
         },
         data(){
             return{

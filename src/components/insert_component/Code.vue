@@ -1,8 +1,8 @@
 <script>
 import Component from './Component.vue';
 import ChildComponent from './ChildComponent.vue';
-import component_code_image from '@/assets/images/';
-import child_component_code_image from '@/assets/images/props/props_child_component.png';
+import component_code_image from '@/assets/images/insert_component/insert_component_component_image.png';
+import child_component_code_image from '@/assets/images/insert_component/insert_component_child_component_image.png';
 
     export default {
         name: 'Code',

@@ -1,6 +1,5 @@
 <script>
 import Component from './Component.vue';
-import ChildComponent from './ChildComponent.vue';
 import component_code_image from '@/assets/images/conditional_rendering/con_ren_props_component.png';
 
 
@@ -8,7 +7,6 @@ import component_code_image from '@/assets/images/conditional_rendering/con_ren_
         name: 'Code',
         components: {
             Component,
-            ChildComponent,
         },
         data(){
             return{
