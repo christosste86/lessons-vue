@@ -8,6 +8,7 @@ import Props from '@/components/props/Code.vue'
 import Emits from '@/components/emit/Code.vue'
 import Slots from '@/components/slots/Description.vue'
 import ScopedSlots from '@/components/scoped_slotes/Description.vue'
+import StateManagment from '@/components/state_managment/Description.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,6 +58,12 @@ const router = createRouter({
       name: 'scopedSlots',
       component: ScopedSlots,
     },
+    {
+      path:'/stateManagment',
+      name: 'stateManagment',
+      component: StateManagment,
+    },
+
 
   ],
   
