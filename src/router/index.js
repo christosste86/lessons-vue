@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import InsertComponent from  '@/components/insert_component/Component.vue'
+import InsertComponent from  '@/components/insert_component/Code.vue'
 import Introdaction from '@/components/Introdaction.vue'
-import DataBinding from '@/components/data_binding/Component.vue'
-import Eventhandling from '@/components/event_handling/Component.vue'
-import CoditionalRendering from '@/components/conditional_rendering/Component.vue'
-import Props from '@/components/props/Component.vue'
-import Emits from '@/components/emit/example/Component.vue'
+import DataBinding from '@/components/data_binding/Code.vue'
+import Eventhandling from '@/components/event_handling/Code.vue'
+import CoditionalRendering from '@/components/conditional_rendering/Code.vue'
+import Props from '@/components/props/Code.vue'
+import Emits from '@/components/emit/Code.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

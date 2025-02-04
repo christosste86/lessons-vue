@@ -1,0 +1,43 @@
+.code{
+  display: flex;
+}
+
+/*Browser style*/
+
+.dot {
+height: 12px;
+width: 12px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+margin-left: 2px;
+}
+
+.container, .code-container{
+border: 3px solid #1f1f1f;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+
+margin: 2px;
+}
+
+.top {
+  display: flex;
+  padding: 10px;
+  background: #1f1f1f;
+  color: white;
+}
+
+.content, .codding-content{
+padding: 10px;
+}
+
+.tag{
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.code-content, .code-container{
+  background-color: #1f1f1f;
+  color: white;
+}

@@ -46,7 +46,7 @@ body {
 
 header {
   background-color: #666;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   font-size: 35px;
   color: white;
@@ -69,8 +69,6 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  
-  background-color: #f1f1f1;
   height: 300px; 
 }
 
@@ -87,8 +85,9 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 40px;
   background-color: #777;
-  padding: 10px;
+  padding: 0;
   text-align: center;
   color: white;
 }

@@ -1,6 +1,6 @@
 <script>
   export default {
-    name:'childComponent',
+    name:'ChildComponent',
   }
 </script>
 

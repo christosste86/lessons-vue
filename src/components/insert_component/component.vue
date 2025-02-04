@@ -2,7 +2,7 @@
 import ChildComponent from './ChildComponent.vue';
 
   export default {
-    name:'component',
+    name:'Component',
       components: {
         ChildComponent
       }
