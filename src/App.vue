@@ -9,24 +9,95 @@ export default{
 
 <template>
   <header>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/insertComponent">Insert component</RouterLink>
-        <RouterLink to="/dataBinding">Data binding</RouterLink>
-        <RouterLink to="/eventHandling">Event component</RouterLink>
-        <RouterLink to="/conditionRendering">Contitional rendering</RouterLink>
-        <RouterLink to="/props">Props</RouterLink>
-        <RouterLink to="/emits">Emits</RouterLink>
-      </nav>
+      <h2>Some examples with Vue</h2>
   </header>
-  <main>
-    <RouterView />
-  </main>
+  <section>
+    <nav>
+        <ul>
+          <li><RouterLink to="/">Home</RouterLink></li>
+          <li><RouterLink to="/insertComponent">Insert component</RouterLink></li>
+          <li><RouterLink to="/dataBinding">Data binding</RouterLink></li>
+          <li><RouterLink to="/eventHandling">Event component</RouterLink></li>
+          <li><RouterLink to="/conditionRendering">Contitional rendering</RouterLink></li>
+          <li><RouterLink to="/props">Props</RouterLink></li>
+          <li><RouterLink to="/emits">Emits</RouterLink></li>
+        </ul>
+    </nav>
+
+    <article>
+      <RouterView />
+    </article>
+
+  </section>
   <footer>
-    <h3>created by christosste86@gmail.com</h3>
+    <p>created by christosste86@gmail.com</p>
   </footer>
 </template>
 
 <style scoped>
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+
+nav {
+  float: left;
+  width: 200px;
+  height: 100%; 
+  background: #ccc;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  
+  background-color: #f1f1f1;
+  height: 300px; 
+}
+
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>
