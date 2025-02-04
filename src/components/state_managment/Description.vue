@@ -1,8 +1,12 @@
 <script>
+import hljs from 'highlight.js';
+import vue from 'highlight.js/lib/languages/xml';
+import 'highlight.js/styles/github-dark.css';
+
+hljs.registerLanguage('vue', vue);
+
 import Component from './example/Component.vue';
 import ChildComponent from './example/ChildComponent.vue';
-import component_code_image from '@/assets/images/slots/slots_component_image.png';
-import child_component_code_image from '@/assets/images/slots/slots_child_component_image.png';
 
     export default {
         name: 'Desciption',
@@ -12,11 +16,33 @@ import child_component_code_image from '@/assets/images/slots/slots_child_compon
         },
         data(){
             return{
-                component_code_image,
-                child_component_code_image,
-            }
-        }
+                componentCode: '',
+                childComponentCode: '',
+                buttonCode:'',
 
+                componentHighlightedCode: '',
+                childComponentHighlightedCode: '',
+                buttonHighlightedCode: ''
+            }
+        },
+        async mounted() {
+            const componetUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/src/components/state_managment/example/Component.vue";
+            const childComponentUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/src/components/state_managment/example/Component.vue";
+            const buttonUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/src/components/state_managment/example/Component.vue"; 
+            try {
+                const [response1, response2, response3] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl), fetch(buttonUrl)]);
+
+                this.componentCode = await response1.text();
+                this.childComponentCode = await response2.text();
+                this.buttonCode = await response3.text();
+
+                this.componentHighlightedCode = hljs.highlight(this.componentCode, { language: 'vue' }).value;
+                this.childComponentHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
+                this.buttonHighlightedCode = hljs.highlight(this.buttonCode, { language: 'vue' }).value;
+            } catch (error) {
+                console.error("Error fetching code:", error);
+            }
+        },
     }
 </script>
 <template>
@@ -28,8 +54,8 @@ import child_component_code_image from '@/assets/images/slots/slots_child_compon
             <div class="top">
                 <div class="tag">Component</div>
             </div>
-            <div class="code-content">
-                <img :src="component_code_image" alt="component code">
+            <div class="code-content" v-if="componentHighlightedCode">
+                <pre v-html="componentHighlightedCode"></pre>
             </div>
         </div>
 <!--Child Component-->
@@ -37,11 +63,19 @@ import child_component_code_image from '@/assets/images/slots/slots_child_compon
             <div class="top">
                 <div class="tag">ChildComponent</div>
             </div>
-            <div class="code-content">
-                <img :src="child_component_code_image" alt="child component code">
+            <div class="code-content" v-if="childComponentHighlightedCode">
+                <pre v-html="childComponentHighlightedCode"></pre>
             </div>
         </div>
-
+<!--button Component-->
+<div class="code-container">
+            <div class="top">
+                <div class="tag">ChildComponent</div>
+            </div>
+            <div class="code-content" v-if="buttonHighlightedCode">
+                <pre v-html="buttonHighlightedCode"></pre>
+            </div>
+        </div>
 
         <div class="container">
             <div class="top">
@@ -57,5 +91,10 @@ import child_component_code_image from '@/assets/images/slots/slots_child_compon
 </template>
 
 <style scoped>
-
+    pre {
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: monospace;
+    }
 </style>
