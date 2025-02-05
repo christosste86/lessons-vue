@@ -20,7 +20,7 @@ import Component from './example/Component.vue';
         },
         async mounted() {
             const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/"
-            const componetUrl = baseUrl + "src/components/conditional_rendering/Component.vue";
+            const componetUrl = baseUrl + "src/components/conditional_rendering/example/Component.vue";
             try {
                 const [response1] = await Promise.all([fetch(componetUrl)]);
 

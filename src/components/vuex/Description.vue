@@ -47,7 +47,11 @@ import Component from './example/Component.vue';
 <template>
 <!--description-->
     <div class="description">
-        
+        <ul>
+            <li>Vuex provides a centralized store for managing the state of your Vue applcation.</li>
+            <li>It uses mutations to safely modify state data</li>
+            <li>Vuex seamlessly integrates with Vue components, allowing you to access and update state from different parts of your application.</li>
+        </ul>
     </div>
 <!--Component-->
     <div class="code">
@@ -77,7 +81,7 @@ import Component from './example/Component.vue';
                 <pre v-html="buttonHighlightedCode"></pre>
             </div>
         </div>
-
+<!--browser-->
         <div class="container">
             <div class="top">
                 <span class="dot"></span>
