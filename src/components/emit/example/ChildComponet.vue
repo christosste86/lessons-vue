@@ -1,6 +1,4 @@
 <script>
-import ChildComponent from '@/components/insert_component/example/ChildComponent.vue';
-
     export default{
         name: 'ChildComponent',
         emits:[

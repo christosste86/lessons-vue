@@ -20,7 +20,7 @@ import Component from './example/Component.vue';
         },
         async mounted() {
             const baseUrl = "src/components/data_binding/Component.vue"
-            const componetUrl = baseUrl + "src/components/state_managment/example/Component.vue";
+            const componetUrl = baseUrl + "src/components/data_binding/example/Component.vue";
             try {
                 const [response1] = await Promise.all([fetch(componetUrl)]);
 

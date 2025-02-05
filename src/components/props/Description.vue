@@ -6,13 +6,11 @@ import 'highlight.js/styles/github-dark.css';
 hljs.registerLanguage('vue', vue);
 
 import Component from './example/Component.vue';
-import ChildComponent from './example/ChildComponent.vue';
 
     export default {
         name: 'Desciption',
         components: {
             Component,
-            ChildComponent,
         },
         data(){
             return{
@@ -25,8 +23,8 @@ import ChildComponent from './example/ChildComponent.vue';
         },
         async mounted() {
             const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/"
-            const componetUrl = baseUrl + "src/components/insert_component/example/Component.vue";
-            const childComponentUrl = baseUrl + "src/components/insert_component/example/ChildComponent.vue";
+            const componetUrl = baseUrl + "src/components/props/example/Component.vue";
+            const childComponentUrl = baseUrl + "src/components/props/example/ChildComponent.vue";
             try {
                 const [response1, response2] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl)]);
 

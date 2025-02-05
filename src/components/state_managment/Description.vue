@@ -6,13 +6,11 @@ import 'highlight.js/styles/github-dark.css';
 hljs.registerLanguage('vue', vue);
 
 import Component from './example/Component.vue';
-import ChildComponent from './example/ChildComponent.vue';
 
     export default {
         name: 'Desciption',
         components: {
             Component,
-            ChildComponent,
         },
         data(){
             return{

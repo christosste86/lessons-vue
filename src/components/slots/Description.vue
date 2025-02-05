@@ -1,49 +1,70 @@
 <script>
+import hljs from 'highlight.js';
+import vue from 'highlight.js/lib/languages/xml';
+import 'highlight.js/styles/github-dark.css';
+
+hljs.registerLanguage('vue', vue);
+
 import Component from './example/Component.vue';
-import ChildComponent from './example/ChildComponent.vue';
-import component_code_image from '@/assets/images/slots/slots_component_image.png';
-import child_component_code_image from '@/assets/images/slots/slots_child_component_image.png';
 
     export default {
         name: 'Desciption',
         components: {
             Component,
-            ChildComponent,
         },
         data(){
             return{
-                component_code_image,
-                child_component_code_image,
-            }
-        }
+                componentCode: '',
+                childComponentCode: '',
 
+                componentHighlightedCode: '',
+                childComponentHighlightedCode: '',
+            }
+        },
+        async mounted() {
+            const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/"
+            const componetUrl = baseUrl + "src/components/slots/example/Component.vue";
+            const childComponentUrl = baseUrl + "src/components/slots/example/ChildComponent.vue";
+            try {
+                const [response1, response2] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl)]);
+
+                this.componentCode = await response1.text();
+                this.childComponentCode = await response2.text();
+
+                this.componentHighlightedCode = hljs.highlight(this.componentCode, { language: 'vue' }).value;
+                this.childComponentHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
+
+            } catch (error) {
+                console.error("Error fetching code:", error);
+            }
+        },
     }
 </script>
 <template>
+<!--description-->
     <div class="description">
-        <p>They are like placeholders where a parent component can inject content into a child component. 
-            Think of them as blank spaces or containers that the parent can fill with specific content.</p>
+        
     </div>
+<!--Component-->  
     <div class="code">
         <div class="code-container">
             <div class="top">
-                <div class="tag">Component</div>
+                <div class="tag">Component.vue</div>
             </div>
-            <div class="code-content">
-                <img :src="component_code_image" alt="component code">
+            <div class="code-content" v-if="componentHighlightedCode">
+                <pre v-html="componentHighlightedCode"></pre>
             </div>
         </div>
 <!--Child Component-->
         <div class="code-container">
             <div class="top">
-                <div class="tag">ChildComponent</div>
+                <div class="tag">ChildComponent.vue</div>
             </div>
-            <div class="code-content">
-                <img :src="child_component_code_image" alt="child component code">
+            <div class="code-content" v-if="childComponentHighlightedCode">
+                <pre v-html="childComponentHighlightedCode"></pre>
             </div>
         </div>
-
-
+<!--browser-->
         <div class="container">
             <div class="top">
                 <span class="dot"></span>
@@ -58,5 +79,10 @@ import child_component_code_image from '@/assets/images/slots/slots_child_compon
 </template>
 
 <style scoped>
-
+    pre {
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: monospace;
+    }
 </style>
