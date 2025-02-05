@@ -1,29 +1,14 @@
-//index.js
-import Vue from "vue";
-import Vuex from "vuex";
+import {createStore} from 'vuex'
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
-  state: {
-    errors: {}
-  },
-
-  getters: {
-    errors(state) {
-      return state.errors;
+export default createStore({
+    state: {
+    },
+    getters: {
+    },
+    mutations: {
+    },
+    actions: {
+    },
+    modules: {
     }
-  },
-
-  mutations: {
-    SET_ERRORS(state, data) {
-      state.errors = data;
-    }
-  },
-
-  actions: {
-    setErrors({ commit }, errors) {
-      commit("SET_ERRORS", errors);
-    }
-  }
 });
