@@ -1,14 +1,47 @@
 <script>
+import Counter from './Counter.vue';
+import CounterSquared from './CounterSquared.vue';
+import IncButtons from './IncButtons.vue';
+import IncButtonsFromApi from './IncButtonsFromApi.vue';
+
 	export default {
+		/*Object*/
 		name: 'Component',
+		/*object*/
+		components: {
+			Counter,
+			CounterSquared,
+			IncButtons,
+			IncButtonsFromApi
+		},
+		/*Object*/
+		computed:{
+			colorCode:{
+				/*mehod*/
+				get() {
+				return this.$store.state.colorCode
+				},
+				/*mehod*/
+				set(newValue){
+					return this.$store.dispatch('setColorCode', newValue)
+				}
+			}
+			
+		}
 	}
 </script>
 
 <template>
-	<h1>{{ $store.state.count }}</h1>
+	<Counter />
+	<CounterSquared />
 	<br/>
-	<button @click="$store.commit('inc')">Add</button>
-	<button @click="$store.commit('desc')">Sub</button>
+	<IncButtons />
 	<br/>
-	<button @click="$store.dispatch('callWihDelay')">Add with delay</button>
+	<IncButtonsFromApi />	
+	<div>
+		<input
+		v-model="colorCode"
+		placeholder="Enter color code"
+		type="text"
+	</div>
 </template>
