@@ -9,4 +9,6 @@
 	<br/>
 	<button @click="$store.commit('inc')">Add</button>
 	<button @click="$store.commit('desc')">Sub</button>
+	<br/>
+	<button @click="$store.dispatch('callWihDelay')">Add with delay</button>
 </template>
