@@ -7,67 +7,68 @@ hljs.registerLanguage('vue', vue);
 
 import Component from './example/Component.vue';
 
-    export default {
-        name: 'Desciption',
-        components: {
-            Component,
-        },
-        data(){
-            return{
-                componentCode: '',
-                counterCode: '',
-                counterSquaredCode:'',
-                incButtonsCode:'',
-                incButtonsFromApiCode:'',
-                storeVuexCode:'',
+export default {
+    name: 'Description',
+    components: {
+        Component,
+    },
+    data() {
+        return {
+            componentCode: '',
+            counterCode: '',
+            counterSquaredCode: '',
+            incButtonsCode: '',
+            incButtonsFromApiCode: '',
+            storeVuexCode: '',
 
-                componentHighlightedCode: '',
-                counterHighlightedCode: '',
-                counterSquaredHighlightedCode: '',
-                incButtonsHighlightedCode: '',
-                incButtonsFromApiHighlightedCode: '',
-                storeVuexHighlightedCode: '',
-            }
-        },
-        async mounted() {
-            const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/"
-            const componetUrl = baseUrl + "src/components/vuex/example/Component.vue";
-            const counterUrl = baseUrl + "src/components/state_managment/example/ChildComponent.vue";
-            const counterSquaredUrl = baseUrl + "src/components/state_managment/example/ChildComponent.vue";
-            const incButtonsUrl = baseUrl + "src/components/state_managment/example/ChildComponent.vue";
-            const incButtonsFromApiUrl = baseUrl + "src/components/state_managment/example/ChildComponent.vue";
-            const storeVuexUrl = baseUrl + "src/stores/index.js";
-            
-            try {
-                const [response1, response2, response3, response4, response5, response6] = await Promise.all([
-                    fetch(componetUrl), 
-                    fetch(counterUrl), 
-                    fetch(counterSquaredUrl),
-                    fetch(incButtonsUrl),
-                    fetch(incButtonsFromApiUrl),
-                    fetch(storeVuexUrl),
-                    
-                ]);
+            componentHighlightedCode: '',
+            counterHighlightedCode: '',
+            counterSquaredHighlightedCode: '',
+            incButtonsHighlightedCode: '',
+            incButtonsFromApiHighlightedCode: '',
+            storeVuexHighlightedCode: '',
+        };
+    },
+    async mounted() {
+        const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/";
+        const componentUrl = baseUrl + "src/components/vuex/example/Component.vue";
+        const counterUrl = baseUrl + "src/components/vuex/example/Counter.vue";
+        const counterSquaredUrl = baseUrl + "src/components/vuex/example/CounterSquared.vue";
+        const incButtonsUrl = baseUrl + "src/components/vuex/example/IncButtons.vue";
+        const incButtonsFromApiUrl = baseUrl + "src/components/vuex/example/IncButtonsFromApi.vue";
+        const storeVuexUrl = baseUrl + "src/stores/index.js";
 
-                this.componentCode = await response1.text();
-                this.counterCode = await response2.text();
-                this.counterSquaredCode = await response3.text();
-                this.incButtonsCode = await response4.text();
-                this.incButtonsFromApiCode = await response5.text();
-                this.storeVuexCode = await response6.text();
+        try {
+            const [response1, response2, response3, response4, response5, response6] = await Promise.all([
+                fetch(componentUrl),
+                fetch(counterUrl),
+                fetch(counterSquaredUrl),
+                fetch(incButtonsUrl),
+                fetch(incButtonsFromApiUrl),
+                fetch(storeVuexUrl)
+            ]);
 
-                this.componentHighlightedCode = hljs.highlight(this.componentCode, { language: 'vue' }).value;
-                this.counterHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
-                this.counterSquaredHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
-                this.incButtonsHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
-                this.incButtonsFromApiHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
-                this.storeVuexHighlightedCode = hljs.highlight(this.storeVuexCode, { language: 'vue' }).value;
-            } catch (error) {
-                console.error("Error fetching code:", error);
-            }
-        },
-    }
+            this.componentCode = await response1.text();
+            this.counterCode = await response2.text();
+            this.counterSquaredCode = await response3.text();
+            this.incButtonsCode = await response4.text();
+            this.incButtonsFromApiCode = await response5.text();
+            this.storeVuexCode = await response6.text();
+
+            // ✅ Fix: Use correct variable names
+            this.componentHighlightedCode = hljs.highlight(this.componentCode, { language: 'vue' }).value;
+            this.counterHighlightedCode = hljs.highlight(this.counterCode, { language: 'vue' }).value;
+            this.counterSquaredHighlightedCode = hljs.highlight(this.counterSquaredCode, { language: 'vue' }).value;
+            this.incButtonsHighlightedCode = hljs.highlight(this.incButtonsCode, { language: 'vue' }).value;
+            this.incButtonsFromApiHighlightedCode = hljs.highlight(this.incButtonsFromApiCode, { language: 'vue' }).value;
+            this.storeVuexHighlightedCode = hljs.highlight(this.storeVuexCode, { language: 'javascript' }).value;
+        } catch (error) {
+            console.error("Error fetching code:", error);
+        }
+    },
+};
 </script>
+
 <template>
 <!--description-->
     <div class="description">
@@ -87,39 +88,39 @@ import Component from './example/Component.vue';
                 <pre v-html="componentHighlightedCode"></pre>
             </div>
         </div>
-<!--Component-->
+<!--Counter-->
         <div class="code-container">
             <div class="top">
                 <div class="tag">Counter.vue</div>
             </div>
-            <div class="code-content" v-if="componentHighlightedCode">
+            <div class="code-content" v-if="counterHighlightedCode">
                 <pre v-html="counterHighlightedCode"></pre>
             </div>
         </div>
-<!--Component-->
+<!--CounterSquared-->
         <div class="code-container">
             <div class="top">
                 <div class="tag">CounterSquared.vue</div>
             </div>
-            <div class="code-content" v-if="componentHighlightedCode">
+            <div class="code-content" v-if="counterSquaredHighlightedCode">
                 <pre v-html="counterSquaredHighlightedCode"></pre>
             </div>
         </div>
-<!--Component-->
+<!--IncButtons-->
         <div class="code-container">
             <div class="top">
                 <div class="tag">IncButtons.vue</div>
             </div>
-            <div class="code-content" v-if="componentHighlightedCode">
+            <div class="code-content" v-if="incButtonsHighlightedCode">
                 <pre v-html="incButtonsHighlightedCode"></pre>
             </div>
         </div>
-<!--Component-->
+<!--IncButtonsFromApi-->
         <div class="code-container">
             <div class="top">
                 <div class="tag">IncButtonsFromApi.vue</div>
             </div>
-            <div class="code-content" v-if="componentHighlightedCode">
+            <div class="code-content" v-if="incButtonsFromApiHighlightedCode">
                 <pre v-html="incButtonsFromApiHighlightedCode"></pre>
             </div>
         </div>
@@ -128,7 +129,7 @@ import Component from './example/Component.vue';
             <div class="top">
                 <div class="tag">stores/index.js</div>
             </div>
-            <div class="code-content" v-if="componentHighlightedCode">
+            <div class="code-content" v-if="storeVuexHighlightedCode">
                 <pre v-html="storeVuexHighlightedCode"></pre>
             </div>
         </div>
