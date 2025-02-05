@@ -16,28 +16,28 @@ import Component from './example/Component.vue';
             return{
                 componentCode: '',
                 childComponentCode: '',
-                buttonCode:'',
+                storeVuex:'',
 
                 componentHighlightedCode: '',
                 childComponentHighlightedCode: '',
-                buttonHighlightedCode: ''
+                storeVuexHighlightedCode: ''
             }
         },
         async mounted() {
             const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/"
             const componetUrl = baseUrl + "src/components/state_managment/example/Component.vue";
             const childComponentUrl = baseUrl + "src/components/state_managment/example/ChildComponent.vue";
-            const buttonUrl = baseUrl + "src/components/state_managment/example/Button.vue";
+            const storeVuexUrl = baseUrl + "src/components/state_managment/example/Button.vue";
             try {
-                const [response1, response2, response3] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl), fetch(buttonUrl)]);
+                const [response1, response2, response3] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl), fetch(storeVuexUrl)]);
 
                 this.componentCode = await response1.text();
                 this.childComponentCode = await response2.text();
-                this.buttonCode = await response3.text();
+                this.storeVuexCode = await response3.text();
 
                 this.componentHighlightedCode = hljs.highlight(this.componentCode, { language: 'vue' }).value;
                 this.childComponentHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
-                this.buttonHighlightedCode = hljs.highlight(this.buttonCode, { language: 'vue' }).value;
+                this.storeVuexHighlightedCode = hljs.highlight(this.storeVuexCode, { language: 'vue' }).value;
             } catch (error) {
                 console.error("Error fetching code:", error);
             }
@@ -53,8 +53,8 @@ import Component from './example/Component.vue';
             <li>Vuex seamlessly integrates with Vue components, allowing you to access and update state from different parts of your application.</li>
         </ul>
     </div>
-<!--Component-->
     <div class="code">
+<!--Component-->
         <div class="code-container">
             <div class="top">
                 <div class="tag">Component.vue</div>
@@ -63,22 +63,13 @@ import Component from './example/Component.vue';
                 <pre v-html="componentHighlightedCode"></pre>
             </div>
         </div>
-<!--Child Component-->
+<!--Store-->
         <div class="code-container">
             <div class="top">
-                <div class="tag">ChildComponent.vue</div>
+                <div class="tag">Component.vue</div>
             </div>
-            <div class="code-content" v-if="childComponentHighlightedCode">
-                <pre v-html="childComponentHighlightedCode"></pre>
-            </div>
-        </div>
-<!--button Component-->
-<div class="code-container">
-            <div class="top">
-                <div class="tag">Button.vue</div>
-            </div>
-            <div class="code-content" v-if="buttonHighlightedCode">
-                <pre v-html="buttonHighlightedCode"></pre>
+            <div class="code-content" v-if="componentHighlightedCode">
+                <pre v-html="storeVuexHighlightedCode"></pre>
             </div>
         </div>
 <!--browser-->

@@ -9,6 +9,7 @@ import Emits from '@/components/emit/Description.vue'
 import Slots from '@/components/slots/Description.vue'
 import ScopedSlots from '@/components/scoped_slotes/Description.vue'
 import StateManagment from '@/components/state_managment/Description.vue'
+import Vuex from '@/components/vuex/Description.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -63,10 +64,12 @@ const router = createRouter({
       name: 'stateManagment',
       component: StateManagment,
     },
-
-
-  ],
-  
+    {
+      path:'/vuex',
+      name: 'vuex',
+      component: Vuex,
+    },
+  ], 
 })
 
 export default router

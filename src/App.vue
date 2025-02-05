@@ -25,6 +25,7 @@ export default{
           <li><RouterLink to="/slots">Slots</RouterLink></li>
           <li><RouterLink to="/scopedSlots">Scoped slots</RouterLink></li>
           <li><RouterLink to="/stateManagment">State managment</RouterLink></li>
+          <li><RouterLink to="/vuex">Vuex</RouterLink></li>
         </ul>
     </nav>
 
