@@ -25,9 +25,10 @@ import Component from './example/Component.vue';
         },
         async mounted() {
             const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/"
-            const componetUrl = baseUrl + "src/components/state_managment/example/Component.vue";
+            const componetUrl = baseUrl + "src/components/vuex/example/Component.vue";
             const childComponentUrl = baseUrl + "src/components/state_managment/example/ChildComponent.vue";
-            const storeVuexUrl = baseUrl + "src/components/state_managment/example/Button.vue";
+            const storeVuexUrl = baseUrl + "src/stores/index.js";
+            
             try {
                 const [response1, response2, response3] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl), fetch(storeVuexUrl)]);
 
@@ -66,7 +67,7 @@ import Component from './example/Component.vue';
 <!--Store-->
         <div class="code-container">
             <div class="top">
-                <div class="tag">Component.vue</div>
+                <div class="tag">Stores/index.js</div>
             </div>
             <div class="code-content" v-if="componentHighlightedCode">
                 <pre v-html="storeVuexHighlightedCode"></pre>

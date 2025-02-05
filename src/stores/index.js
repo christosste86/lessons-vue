@@ -7,6 +7,12 @@ export default createStore({
     getters: {
     },
     mutations: {
+        inc(state){
+            state.count++
+        },
+        desc(state){
+            state.count--
+        }
     },
     actions: {
     },
