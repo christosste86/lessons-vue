@@ -18,28 +18,24 @@ import ChildComponent from './example/ChildComponent.vue';
             return{
                 componentCode: '',
                 childComponentCode: '',
-                buttonCode:'',
 
                 componentHighlightedCode: '',
                 childComponentHighlightedCode: '',
-                buttonHighlightedCode: ''
             }
         },
         async mounted() {
             const baseUrl = "https://raw.githubusercontent.com/christosste86/lessons-vue/vue/"
-            const componetUrl = baseUrl + "src/components/state_managment/example/Component.vue";
-            const childComponentUrl = baseUrl + "src/components/state_managment/example/ChildComponent.vue";
-            const buttonUrl = baseUrl + "src/components/state_managment/example/Button.vue";
+            const componetUrl = baseUrl + "src/components/emit/example/Component.vue";
+            const childComponentUrl = baseUrl + "src/components/emit/example/ChildComponet.vue";
             try {
-                const [response1, response2, response3] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl), fetch(buttonUrl)]);
+                const [response1, response2] = await Promise.all([fetch(componetUrl), fetch(childComponentUrl)]);
 
                 this.componentCode = await response1.text();
                 this.childComponentCode = await response2.text();
-                this.buttonCode = await response3.text();
 
                 this.componentHighlightedCode = hljs.highlight(this.componentCode, { language: 'vue' }).value;
                 this.childComponentHighlightedCode = hljs.highlight(this.childComponentCode, { language: 'vue' }).value;
-                this.buttonHighlightedCode = hljs.highlight(this.buttonCode, { language: 'vue' }).value;
+
             } catch (error) {
                 console.error("Error fetching code:", error);
             }
@@ -51,7 +47,7 @@ import ChildComponent from './example/ChildComponent.vue';
     <div class="description">
         
     </div>
-<!--Component-->
+<!--Component-->  
     <div class="code">
         <div class="code-container">
             <div class="top">
@@ -70,16 +66,7 @@ import ChildComponent from './example/ChildComponent.vue';
                 <pre v-html="childComponentHighlightedCode"></pre>
             </div>
         </div>
-<!--button Component-->
-<div class="code-container">
-            <div class="top">
-                <div class="tag">Button.vue</div>
-            </div>
-            <div class="code-content" v-if="buttonHighlightedCode">
-                <pre v-html="buttonHighlightedCode"></pre>
-            </div>
-        </div>
-
+<!--browser-->
         <div class="container">
             <div class="top">
                 <span class="dot"></span>

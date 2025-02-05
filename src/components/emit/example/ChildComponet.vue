@@ -1,5 +1,5 @@
 <script>
-import ChildComponent from '@/components/insert_component/ChildComponent.vue';
+import ChildComponent from '@/components/insert_component/example/ChildComponent.vue';
 
     export default{
         name: 'ChildComponent',

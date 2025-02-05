@@ -1,5 +1,5 @@
 <script>
-import ChildComponent from './ChildComponent.vue';
+import ChildComponent from './example/ChildComponent.vue';
 
   export default {
     name:'Component',

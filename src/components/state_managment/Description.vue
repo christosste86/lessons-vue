@@ -50,6 +50,7 @@ import ChildComponent from './example/ChildComponent.vue';
     <div class="description">
         
     </div>
+<!--Component-->    
     <div class="code">
         <div class="code-container">
             <div class="top">
@@ -77,7 +78,7 @@ import ChildComponent from './example/ChildComponent.vue';
                 <pre v-html="buttonHighlightedCode"></pre>
             </div>
         </div>
-
+<!--browser---->
         <div class="container">
             <div class="top">
                 <span class="dot"></span>
