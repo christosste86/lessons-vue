@@ -3,7 +3,7 @@ import {createStore} from 'vuex'
 export default createStore({
     /*Store all data*/
     state: {
-        count: 10,
+        count: 0,
     },
     /*Get data from state*/
     getters: {
@@ -12,19 +12,17 @@ export default createStore({
     is not other way. 
     We call the mutations as commit('method')*/
     mutations: {
-        inc(state){
+        inc(state, randomNumber){
             state.count++
         },
-        desc(state){
+        desc(state, randomNumber){
             state.count--
         }
     },
     /*To change data in state we mast call commit in action */
     actions: {
-        callWihDelay({commit}) {
-            setTimeout(()=>{
-                commit('inc')
-            },2000)
+        inc({commit}) {
+            url = 'https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new'
         }
     },
     /*You can store in multiple modules*/
