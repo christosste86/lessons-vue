@@ -41,9 +41,7 @@ export default{
 
 <style scoped>
 
-* {
-  box-sizing: border-box;
-}
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -60,7 +58,7 @@ header {
 
 nav {
   float: left;
-  width: 200px;
+  width: 160px;
   height: 100%; 
   background: #ccc;
   padding: 20px;
@@ -73,6 +71,7 @@ nav ul {
 
 article {
   float: left;
+  width: 800px;
   padding: 20px;
   height: 300px; 
 }

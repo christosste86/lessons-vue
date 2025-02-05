@@ -78,6 +78,18 @@ export default {
             <li>Vuex seamlessly integrates with Vue components, allowing you to access and update state from different parts of your application.</li>
         </ul>
     </div>
+
+<!--browser-->
+    <div class="container">
+            <div class="top">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="content">
+                <Component />
+            </div>
+        </div>
     <div class="code">
 <!--Component-->
         <div class="code-container">
@@ -131,17 +143,6 @@ export default {
             </div>
             <div class="code-content" v-if="storeVuexHighlightedCode">
                 <pre v-html="storeVuexHighlightedCode"></pre>
-            </div>
-        </div>
-<!--browser-->
-        <div class="container">
-            <div class="top">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-            <div class="content">
-                <Component />
             </div>
         </div>
     </div>
