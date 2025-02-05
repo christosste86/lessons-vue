@@ -12,7 +12,6 @@
 					color: 'red',
 					backgroundColor: 'black'
 				}
-
             }
         }
 		
