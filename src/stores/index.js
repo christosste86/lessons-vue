@@ -18,7 +18,7 @@ export default createStore({
     We call the mutations as commit('method')*/
     mutations: {
         incFromApi(state, randomNumber){
-            state.count += randomNumber
+            state.count = randomNumber
         },
         descFromApi(state, randomNumber){
             state.count -= randomNumber

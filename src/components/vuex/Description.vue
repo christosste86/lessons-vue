@@ -70,6 +70,7 @@ export default {
 </script>
 
 <template>
+
 <!--description-->
     <div class="description">
         <ul>
@@ -91,6 +92,7 @@ export default {
             </div>
         </div>
     <div class="code">
+        <div class="content">
 <!--Component-->
         <div class="code-container">
             <div class="top">
@@ -146,9 +148,15 @@ export default {
             </div>
         </div>
     </div>
+</div>
 </template>
 
 <style scoped>
+    .content{
+        width: 500px;
+        
+        display:contents;
+    }
     pre {
         padding: 10px;
         border-radius: 5px;

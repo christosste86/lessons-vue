@@ -12,6 +12,7 @@ export default{
   <header>
       <h2>Some examples with Vue</h2>
   </header>
+  <container class="container">
   <section>
     <nav>
         <ul>
@@ -37,15 +38,14 @@ export default{
   <footer>
     <p>created by christosste86@gmail.com</p>
   </footer>
+</container>
 </template>
 
 <style scoped>
 
 
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 
 header {
   background-color: #666;
@@ -55,10 +55,19 @@ header {
   color: white;
 }
 
+.container {
+ display: grid;
+ grid-template-areas: 
+  "left right-top"
+  "left right-bottom"
+  "bottom bottom"
+ ;
+
+}
 
 nav {
   float: left;
-  width: 160px;
+  
   height: 100%; 
   background: #ccc;
   padding: 20px;
@@ -70,30 +79,30 @@ nav ul {
 }
 
 article {
-  float: left;
-  width: 800px;
+  grid-area: right;
+  width: 1000px;
   padding: 20px;
   height: 300px; 
 }
 
 
-section::after {
-  content: "";
-  display: table;
-  clear: both;
+section {
+  grid-area: left;
+  width: 160px;
+  display: flex;
+  height: 100%;
+  
 }
 
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   height: 40px;
   background-color: #777;
   padding: 0;
   text-align: center;
   color: white;
+  grid-area: bottom;
 }
 
 
